@@ -1,0 +1,109 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffd700;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.button {
+    margin: 20px 0;
+}
+
+.button a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 1em;
+    background: #ffd700;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.button a:hover {
+    background: #ffcc00;
+}
+
+.button img {
+    margin-left: 10px;
+}
+
+section#home {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+    text-align: left;
+    margin: 20px 0;
+}
+
+section#home h2 {
+    margin-bottom: 10px;
+}
+
+section#home p {
+    margin-bottom: 20px;
+}
+
+#premios, #beneficios, #tarjeta-digital {
+    margin-bottom: 20px;
+}
+
+#premios ul, #beneficios ul {
+    list-style: none;
+}
+
+#premios li, #beneficios li {
+    background: #eee;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#premios li:nth-child(even), #beneficios li:nth-child(even) {
+    background: #ddd;
+}
+
+#tarjeta-digital p {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+footer {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    color: rgb(247, 247, 250);
+    bottom: 0;
+    width: 100%;
+}

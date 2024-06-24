@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Especiales</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        .container {
+            padding: 10px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #000;
+            color: #fff;
+            padding: 10px;
+        }
+        .header img {
+            width: 24px;
+            height: 24px;
+        }
+        .item {
+            background-color: #fff;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .item-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+        .item-info span {
+            font-size: 14px;
+            color: #888;
+        }
+        .item-info .points {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+        }
+        .item-info .points img {
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+        }
+        .buy-button {
+            background-color: #FFA500;
+            color: #000;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            margin-right: 5px;
+        }
+        .buy-button img {
+            width: 16px;
+            height: 16px;
+            margin-left: 5px;
+        }
+        .buttons {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="./premios.html"><img src="./img/atras.png" alt="Atrás"></a>
+            <h1>Especiales</h1>
+            <img src="./img/correo.png" alt="Correo">
+        </div>
+        <div id="premios-obtenidos"></div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('obtener.php')
+                .then(response => response.json())
+                .then(data => {
+                    const premiosObtenidos = data;
+                    const contenedorPremios = document.getElementById('premios-obtenidos');
+                    contenedorPremios.innerHTML = '';
+
+                    premiosObtenidos.forEach(premio => {
+                        const itemHTML = `
+                            <div class="item" id="premio-${premio.id}">
+                                <h2>${premio.nombre}</h2>
+                                <p>${premio.descripcion}</p>
+                                <img src="${premio.imagen}" alt="${premio.nombre}" style="width: 100px; height: auto;">
+                                <div class="item-info">
+                                    <div class="points">
+                                        <img src="points_icon.png" alt="Puntos">
+                                        <span>${premio.puntosRequeridos} pts.</span>
+                                    </div>
+                                    <div class="buttons">
+                                        <a href="#" class="buy-button" onclick="obtenerPremio(${premio.id}, '${premio.nombre}', '${premio.descripcion}', '${premio.imagen}', ${premio.puntosRequeridos})"> 
+                                            <span>Obtenerlo</span>
+                                            <img src="./img/carrito.png" alt="Carrito">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        contenedorPremios.innerHTML += itemHTML;
+                    });
+                })
+                .catch(error => {
+                    console.error('Error al obtener los premios:', error);
+                });
+        });
+
+        function obtenerPremio(id, nombre, descripcion, imagen, puntos) {
+            const premio = {
+                id: id,
+                nombre: nombre,
+                descripcion: descripcion,
+                imagen: imagen,
+                puntos: puntos
+            };
+            // Obtener la lista de premios del localStorage o crear una nueva si no existe
+            const premios = JSON.parse(localStorage.getItem('premiosObtenidos')) || [];
+            premios.push(premio);
+            localStorage.setItem('premiosObtenidos', JSON.stringify(premios));
+            document.getElementById(`premio-${id}`).style.display = 'none'; // Oculta el premio temporalmente
+            window.location.href = 'beneficio.html';
+        }
+    </script>
+</body>
+</html>

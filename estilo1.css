@@ -1,0 +1,65 @@
+.app-preview {
+    display: flex;
+    align-items: center;
+    margin: 50px auto;
+    width: 80%;
+    max-width: 1000px;
+}
+
+.app-info {
+    flex: 1;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.app-info h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.app-info p {
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+.app-features {
+    margin-top: 20px;
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.app-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.download-button,
+.learn-more-button {
+    display: block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.learn-more-button {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.app-image {
+    flex: 1;
+    margin-left: 30px;
+}
+
+.app-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}

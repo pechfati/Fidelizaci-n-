@@ -1,0 +1,86 @@
+.loyalty-program-card {
+    width: 400px;
+    margin: 50px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.card-header h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.card-header img {
+    width: 100px;
+    height: auto;
+}
+
+.user-info {
+    margin-bottom: 20px;
+}
+
+.user-name {
+    font-weight: 600;
+}
+
+.points-summary {
+    margin-bottom: 20px;
+}
+
+.points-number {
+    font-size: 24px;
+    font-weight: 600;
+    color: #007bff;
+}
+
+.benefits-list {
+    margin-bottom: 20px;
+}
+
+.benefits-list h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.benefits-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.benefits-list li {
+    margin-bottom: 5px;
+}
+
+.card-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.redeem-points-button,
+.check-benefits-button {
+    display: block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.check-benefits-button {
+    background-color: #f0f0f0;
+    color: #333;
+}
